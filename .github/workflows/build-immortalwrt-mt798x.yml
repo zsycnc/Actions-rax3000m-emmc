@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build ImmortalWrt-mt798x
+name: Build ImmortalWrt-mt798x(闭源)
 #编译hanwckf闭源固件
 permissions: write-all
 # 开启写权限，防止无法上传到release
