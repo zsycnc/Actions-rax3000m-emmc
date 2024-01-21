@@ -76,7 +76,7 @@ jobs:
       run: |
         git clone $REPO_URL openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-        git clone https://github.com/coolsnowwolf/luci/tree/master/applications/luci-app-easymesh.git $GITHUB_WORKSPACE/openwrt/package/luci-app-easymesh
+        git clone https://github.com/coolsnowwolf/luci/tree/master/applications/luci-app-easymesh $GITHUB_WORKSPACE/openwrt/package/luci-app-easymesh
         
     - name: 开启缓存
       uses: klever1988/cachewrtbuild@main
