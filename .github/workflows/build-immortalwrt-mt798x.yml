@@ -9,7 +9,7 @@
 #
 
 name: Build ImmortalWrt-mt798x
-
+#编译hanwckf闭源固件
 permissions: write-all
 # 开启写权限，防止无法上传到release
 
@@ -76,7 +76,7 @@ jobs:
       run: |
         git clone $REPO_URL openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-        git clone https://github.com/coolsnowwolf/luci/tree/master/applications/luci-app-easymesh.git /workdir/openwrt $GITHUB_WORKSPACE/openwrt/package/luci-app-easymesh
+        git clone https://github.com/coolsnowwolf/luci/tree/master/applications/luci-app-easymesh.git $GITHUB_WORKSPACE/openwrt/package/luci-app-easymesh
         
     - name: 开启缓存
       uses: klever1988/cachewrtbuild@main
