@@ -91,9 +91,9 @@ jobs:
     - name: 更新 & 安装 feeds & 执行脚本
       run: |
         cd openwrt
-        ./scripts/feeds update -a && ./scripts/feeds install -a
         mkdir -p /workdir/openwrt/feeds/luci/applications/luci-app-easymesh
         git clone https://github.com/ntlf9t/luci-app-easymesh.git /workdir/openwrt/feeds/luci/applications/luci-app-easymesh        
+        ./scripts/feeds update -a && ./scripts/feeds install -a
         chmod +x $GITHUB_WORKSPACE/$DIY_SH && $GITHUB_WORKSPACE/$DIY_SH
 
     - name: 导入补丁和配置
