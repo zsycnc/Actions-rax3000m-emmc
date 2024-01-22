@@ -73,12 +73,13 @@ jobs:
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
         mkdir -p /workdir/openwrt/package/luci-app-easymesh
         cd /workdir/openwrt/package/luci-app-easymesh
-        git init
-        git remote add origin  https://github.com/coolsnowwolf/luci.git
-        git config core.sparsecheckout true
-        echo "applications/luci-app-easymesh" >> .git/info/sparse-checkout
-        git pull --depth 1 origin master
-        ls 
+        #git init
+        git clone https://github.com/ntlf9t/luci-app-easymesh.git /workdir/openwrt/package/luci-app-easymesh        
+        #git remote add origin  https://github.com/coolsnowwolf/luci.git
+        #git config core.sparsecheckout true
+        #echo "applications/luci-app-easymesh" >> .git/info/sparse-checkout
+        #git pull --depth 1 origin master
+        ls -al
         cd /workdir
 
     - name: 开启缓存
@@ -92,7 +93,7 @@ jobs:
       run: |
         cd openwrt
         mkdir -p /workdir/openwrt/feeds/luci/applications/luci-app-easymesh
-        git clone https://github.com/ntlf9t/luci-app-easymesh.git /workdir/openwrt/feeds/luci/applications/luci-app-easymesh        
+        git clone https://github.com/ntlf9t/luci-app-easymesh.git /workdir/openwrt/feeds/luci/applications/luci-app-easymesh
         ./scripts/feeds update -a && ./scripts/feeds install -a
         chmod +x $GITHUB_WORKSPACE/$DIY_SH && $GITHUB_WORKSPACE/$DIY_SH
 
