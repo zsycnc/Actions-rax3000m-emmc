@@ -101,9 +101,9 @@ jobs:
         git config --global user.name "github-actions[bot]"
         #git fetch https://github.com/padavanonly/immortalwrt-mt798x
         #git merge FETCH_HEAD
-        ./scripts/feeds update -a && ./scripts/feeds install -a 
         mkdir -p /workdir/openwrt/feeds/luci/applications/luci-app-easymesh
         git clone https://github.com/ntlf9t/luci-app-easymesh.git /workdir/openwrt/feeds/luci/applications/luci-app-easymesh
+        ./scripts/feeds update -a && ./scripts/feeds install -a 
         chmod +x $GITHUB_WORKSPACE/$DIY_SH && $GITHUB_WORKSPACE/$DIY_SH
 
     - name: 导入补丁和配置
