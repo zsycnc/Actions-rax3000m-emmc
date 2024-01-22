@@ -101,8 +101,6 @@ jobs:
         git config --global user.name "github-actions[bot]"
         #git fetch https://github.com/padavanonly/immortalwrt-mt798x
         #git merge FETCH_HEAD
-        mkdir -p /workdir/openwrt/package/luci-app-easymesh
-        git clone https://github.com/ntlf9t/luci-app-easymesh.git /workdir/openwrt/package/luci-app-easymesh
         ./scripts/feeds update -a && ./scripts/feeds install -a 
         chmod +x $GITHUB_WORKSPACE/$DIY_SH && $GITHUB_WORKSPACE/$DIY_SH
 
@@ -141,9 +139,10 @@ jobs:
         find dl -size -1024c -exec rm -f {} \;
     - name: 编译easymesh
       run: |
-        make package/luci-app-easymesh/clean V=s
-        make package/luci-app-easymesh/prepare V=s
-        make package/luci-app-easymesh/compile V=s
+        cd openwrt
+        mkdir -p /workdir/openwrt/package/feeds/luci/luci-app-easymesh
+        git clone https://github.com/ntlf9t/luci-app-easymesh.git /workdir/openwrt/package/feeds/luci/luci-app-easymesh
+        make package/luci-app-easymesh V=s
         
     - name: 编译固件中
       id: compile
