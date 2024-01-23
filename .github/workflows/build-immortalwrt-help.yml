@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build ImmortalWrt(开源有情）
+name: Build ImmortalWrt(友情开源）
 
 permissions: write-all
 # 开启写权限，防止无法上传到release
@@ -166,6 +166,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && steps.compile.outputs.status == 'success' && !cancelled()
       run: |
+        echo -e "友情提供" >> release.txt
         echo -e "### immortalwrt-23.05-SNAPSHOT-rax3000m-emmc-ubootmod" >> release.txt
         eeprom_status=""
         if [ -e openwrt/target/linux/mediatek/filogic/base-files/lib/firmware/mediatek/nx30pro_eeprom.bin ] ; then
