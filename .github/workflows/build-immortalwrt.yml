@@ -72,10 +72,6 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
         #git init
-        mkdir -p /workdir/openwrt/package/luci-app-easymesh
-        git clone --depth=1 https://github.com/ntlf9t/luci-app-easymesh.git /workdir/openwrt/package/luci-app-easymesh        
-        mkdir-p /workdir/openwrt/package/helloworld
-        git clone --depth=1 https://github.com/fw876/helloworld.git /workdir/openwrt/package/helloworld
         #git remote add origin  https://github.com/coolsnowwolf/luci.git
         #git config core.sparsecheckout true
         #echo "applications/luci-app-easymesh" >> .git/info/sparse-checkout
