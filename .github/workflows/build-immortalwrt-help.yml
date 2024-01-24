@@ -33,7 +33,7 @@ env:
   FREE_DISK_SH: scripts/free_disk_space.sh
   ENV_SH: scripts/environment.sh
   DIY_SH: scripts/diy.sh
-  DIY_SH1: scripts/diy1.sh
+  #DIY_SH1: scripts/diy1.sh
   CLASH_CORE: scripts/preset-clash-core.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: false
@@ -77,8 +77,6 @@ jobs:
         #git config core.sparsecheckout true
         #echo "applications/luci-app-easymesh" >> .git/info/sparse-checkout
         #git pull --depth 1 origin master
-        ls -al
-        cd /workdir
 
     - name: 开启缓存
       uses: klever1988/cachewrtbuild@main
@@ -89,19 +87,19 @@ jobs:
 
     - name: 更新 & 安装 feeds & 执行脚本
       run: |
-        cd openwrt/package/feeds
+        cd openwrt/package/feeds/luci
         #chmod +x $GITHUB_WORKSPACE/$DIY_SH1 && $GITHUB_WORKSPACE/$DIY_SH1
         #mkdir -p /workdir/openwrt/package/feeds/luci/luci-app-easymesh
         git clone --depth=1 https://github.com/shuishihan/luci-app-easymesh.git /workdir/openwrt/package/feeds/luci/luci-app-easymesh
         #mkdir -p /workdir/openwrt/package/feeds/luci/luci-app-ssr-plus
         git clone --depth=1 https://github.com/fw876/helloworld.git /workdir/openwrt/package/feeds/luci/luci-app-ssr-plus
         #mkdir -p /workdir/openwrt/package/feeds/luci/luci-app-adguardhome
-        git clone --depth=1 https://github.com/rufengsuixing/luci-app-adguardhome.git /workdir/openwrt/package/feeds/luci/luci-app-adguardhome
+        #git clone --depth=1 https://github.com/rufengsuixing/luci-app-adguardhome.git /workdir/openwrt/package/feeds/luci/luci-app-adguardhome
         #mkdir /workdir/openwrt/package/feeds/luci/luci-app-docker 
-        git clone --depth=1 https://github.com/brokeld/luci-app-docker.git luci-app-docker
-        git clone --depth=1 https://github.com/linkease/istore istore
-        git clone --depth=1 https://github.com/linkease/nas-packages.git nas
-        git clone --depth=1 https://github.com/linkease/nas-packages-luci.git nas-luci
+        #git clone --depth=1 https://github.com/brokeld/luci-app-docker.git luci-app-docker
+        #git clone --depth=1 https://github.com/linkease/istore.git istore
+        #git clone --depth=1 https://github.com/linkease/nas-packages.git nas
+        #git clone --depth=1 https://github.com/linkease/nas-packages-luci.git nas-luci
         cd openwrt
         ./scripts/feeds update -a && ./scripts/feeds install -a
         chmod +x $GITHUB_WORKSPACE/$DIY_SH && $GITHUB_WORKSPACE/$DIY_SH
