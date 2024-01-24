@@ -82,7 +82,8 @@ jobs:
 
     - name: 更新 & 安装 feeds & 执行脚本
       run: |
-        mkdir -p openwrt/feeds/packages/luci/applications && cd openwrt/feeds/packages/luci/applications
+        mkdir -p openwrt/package/feeds/luci
+        cd openwrt/package/feeds/luci
         #mkdir luci-app-dockerman && cd luci-app-dockerman
         #git init
         #git remote add origin  https://github.com/lisaac/luci-app-dockerman.git
