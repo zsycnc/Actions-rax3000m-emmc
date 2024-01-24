@@ -101,7 +101,7 @@ jobs:
         #git clone --depth=1 https://github.com/linkease/istore.git istore
         #git clone --depth=1 https://github.com/linkease/nas-packages.git nas
         #git clone --depth=1 https://github.com/linkease/nas-packages-luci.git nas-luci
-        cd openwrt
+        cd /workdir/openwrt
         ./scripts/feeds update -a && ./scripts/feeds install -a
         chmod +x $GITHUB_WORKSPACE/$DIY_SH && $GITHUB_WORKSPACE/$DIY_SH
 
