@@ -98,9 +98,9 @@ jobs:
         git clone --depth=1 https://github.com/rufengsuixing/luci-app-adguardhome.git /workdir/openwrt/package/feeds/luci/luci-app-adguardhome
         #mkdir /workdir/openwrt/package/feeds/luci/luci-app-docker 
         git clone --depth=1 https://github.com/brokeld/luci-app-docker.git luci-app-docker
-        #git clone --depth=1 https://github.com/linkease/istore.git istore
-        #git clone --depth=1 https://github.com/linkease/nas-packages.git nas
-        #git clone --depth=1 https://github.com/linkease/nas-packages-luci.git nas-luci
+        git clone --depth=1 https://github.com/linkease/istore.git istore
+        git clone --depth=1 https://github.com/linkease/nas-packages.git nas
+        git clone --depth=1 https://github.com/linkease/nas-packages-luci.git nas-luci
         cd /workdir/openwrt
         ./scripts/feeds update -a && ./scripts/feeds install -a
         chmod +x $GITHUB_WORKSPACE/$DIY_SH && $GITHUB_WORKSPACE/$DIY_SH
