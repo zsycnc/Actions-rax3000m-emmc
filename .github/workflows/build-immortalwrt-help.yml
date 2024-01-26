@@ -95,7 +95,7 @@ jobs:
         git clone --depth=1 https://github.com/shuishihan/luci-app-easymesh.git luci-app-easymesh
         git clone --depth=1 https://github.com/fw876/helloworld.git luci-app-ssr-plus
         git clone --depth=1 https://github.com/rufengsuixing/luci-app-adguardhome.git luci-app-adguardhome
-        git clone --depth=1 https://github.com/blacktitty-y/luci-app-dockerman.git luci-app-dockerman
+        #git clone --depth=1 https://github.com/blacktitty-y/luci-app-dockerman.git luci-app-dockerman
         git clone --depth=1 https://github.com/linkease/istore.git /workdir/openwrt/feeds/packages/istore
         git clone --depth=1 https://github.com/linkease/nas-packages.git nas
         git clone --depth=1 https://github.com/linkease/nas-packages-luci.git nas-luci
