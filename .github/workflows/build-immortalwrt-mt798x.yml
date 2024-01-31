@@ -91,13 +91,16 @@ jobs:
         git config --global user.name "github-actions[bot]"
         #git fetch https://github.com/padavanonly/immortalwrt-mt798x
         #git merge FETCH_HEAD
-        mkdir -p openwrt/package/feeds/luci
-        cd openwrt/package/feeds/luci
-        git clone --depth=1 https://github.com/shuishihan/luci-app-easymesh.git luci-app-easymesh
-        git clone --depth=1 https://github.com/rufengsuixing/luci-app-adguardhome.git luci-app-adguardhome
+        #mkdir -p openwrt/package/feeds/luci
+        #cd openwrt/package/feeds/luci
+        #git clone --depth=1 https://github.com/shuishihan/luci-app-easymesh.git luci-app-easymesh
+        #git clone --depth=1 https://github.com/rufengsuixing/luci-app-adguardhome.git luci-app-adguardhome
         echo >> feeds.conf.default
+        echo 'src-git luci-app-adguardhome https://github.com/rufengsuixing/luci-app-adguardhome;master' >> feeds.conf.default
+        echo 'src-git easymesh https://github.com/shuishihan/luci-app-easymesh;master' >> feeds.conf.default
         echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
-        echo 'src-git helloworld https://github.com/fw876/helloworld.git' >> feeds.conf.default
+        sed -i "/helloworld/d" "feeds.conf.default"
+        echo "src-git helloworld https://github.com/fw876/helloworld.git" >> "feeds.conf.default"
         cd /workdir/openwrt
         ./scripts/feeds update istore
         ./scripts/feeds install -d y -p istore luci-app-store
