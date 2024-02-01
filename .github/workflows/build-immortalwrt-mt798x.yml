@@ -100,6 +100,12 @@ jobs:
         echo 'src-git easymesh https://github.com/shuishihan/luci-app-easymesh;master' >> feeds.conf.default
         echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
         echo 'src-git helloworld https://github.com/fw876/helloworld;master' >> feeds.conf.default
+        ./scripts/feeds update adguardhome
+        ./scripts/feeds install -d y -p luci-app-adguardhome
+        ./scripts/feeds update easymesh
+        ./scripts/feeds install -d y -p  luci-app-easymesh
+        ./scripts/feeds update helloworld
+        ./scripts/feeds install -d y -p istore luci-app-ssr-plus
         ./scripts/feeds update istore
         ./scripts/feeds install -d y -p istore luci-app-store
         ./scripts/feeds update -a && ./scripts/feeds install -a 
