@@ -82,9 +82,9 @@ jobs:
 
     - name: 更新 & 安装 feeds & 执行脚本
       run: |
-        mkdir -p /workdir/openwrt/package/feeds/luci
-        git clone --depth=1 https://github.com/rufengsuixing/luci-app-adguardhome.git /workdir/openwrt/package/feeds/luci/luci-app-adguardhome
-        git clone --depth=1 https://github.com/shuishihan/luci-app-easymesh.git /workdir/openwrt/package/feeds/luci/luci-app-easymesh
+        mkdir -p /workdir/openwrt/package
+        git clone --depth=1 https://github.com/rufengsuixing/luci-app-adguardhome.git /workdir/openwrt/package/luci-app-adguardhome
+        git clone --depth=1 https://github.com/shuishihan/luci-app-easymesh.git /workdir/openwrt/package/luci-app-easymesh
         cd /workdir/openwrt
         echo >> feeds.conf.default
         echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
