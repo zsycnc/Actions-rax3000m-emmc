@@ -25,7 +25,7 @@
 
 - 需要取消集成或添加其他软件包可在 `configs/rax3000m-emmc_mtksdk.config` 处参考注释内容自行修改或添加配置选项
 
-- 默认构建使用 OpenWrt 原生 luci 无线控制界面，如需使用 MTK SDK 无线控制界面 (luci-app-mtk) 请在 Run workflow 时取消勾选 “Use mtwifi-cfg”，或在 workflow 配置文件中将 `USE_MTWIFI_CFG` 中 `default: true` 的 true 改为 false，重新编译刷入使用
+- 默认构建使用 OpenWrt MTK SDK 无线控制界面，如需使用原生 luci 无线控制界面，Run workflow 执行时选择勾选。
 
 - 默认构建 eeprom 替换为 H3C NX30 Pro 提取版本（来自 [237大佬](https://www.right.com.cn/forum/?364126) 提取）以增大无线功率，**原厂 eeprom 无线信号 2.4G: 23dBm, 5G: 22dBm；替换 nx30pro_eeprom 后 2.4G: 25dBm, 5G: 24dBm**。如需恢复使用默认 eeprom 请在 Run workflow 时取消勾选 “Use nx30pro eeprom”，或在 workflow 配置文件中将 `USE_NX30PRO_EEPROM` 中 `default: true` 的 true 改为 false，重新编译刷入使用
 
