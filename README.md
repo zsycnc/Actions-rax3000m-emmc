@@ -22,7 +22,7 @@
 
 ### 配置说明
 - 默认 LAN IP 已更改为 `192.168.10.1`，可在 `scripts/diy.sh` 处修改;
-- 初始账号：root，密码：rroot
+- 初始账号：root，密码：root
 
 - 需要取消集成或添加其他软件包可在 `configs/rax3000m-emmc.config` 处参考注释内容自行修改或添加配置
 
