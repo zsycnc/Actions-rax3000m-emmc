@@ -12,7 +12,7 @@
 `f2fsck, losetup, mkf2fs, kmod-fs-f2fs, kmod-mmc, luci-app-ksmbd, luci-i18n-ksmbd-zh-cn, ksmbd-utils` 等
 
 添加集成软件包
-`cfdisk, htop, openssl-util, kmod-fuse, kmod-usb-net-ipheth, kmod-usb-net-rndis,kmod-tun, fuse-utils, kmod-fs-ntfs3, ntfs3-mount, automount, luci-compat, luci-app-argon-config, luci-app-autoreboot, luci-app-diskman, luci-app-ksmbd, luci-app-openclash, luci-app-passwall, luci-app-openvpn, luci-app-ssr-plus, luci-app-usb-printer, luci-app-zerotier, luci-theme-argon, luci-app-acl, luci-app-frpc, luci-app-alist, 
+`cfdisk, htop, openssl-util, kmod-fuse, kmod-usb-net-ipheth, kmod-usb-net-rndis,kmod-tun, fuse-utils, kmod-fs-ntfs3, ntfs3-mount, automount, luci-compat, luci-app-argon-config, luci-app-autoreboot, luci-app-diskman, luci-app-ksmbd, luci-app-openclash, luci-app-passwall,  luci-app-ssr-plus, luci-app-usb-printer, luci-app-zerotier, luci-theme-argon, luci-app-acl, luci-app-frpc, luci-app-alist, 
 等并预置 openclash 内核
 
 如需在线安装 kmod 内核模块类型软件包，你需要在 http://mirrors.pku.edu.cn/immortalwrt/releases/23.05-SNAPSHOT/targets/mediatek/filogic/packages/ 处手动查找下载 "kernel_5.15.\*_aarch64_cortex-a53.ipk" 该软件包并上传安装，之后即可正常在线安装其他 kmod 软件包
